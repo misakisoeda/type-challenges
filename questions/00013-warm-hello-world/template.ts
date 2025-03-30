@@ -1,1 +1,8 @@
-type HelloWorld = any // expected to be a string
+type HelloWorld = string
+
+import type { Equal, Expect, NotAny } from '@type-challenges/utils'
+
+type cases = [
+  Expect<NotAny<HelloWorld>>,
+  Expect<Equal<HelloWorld, string>>,
+]
